@@ -74,7 +74,6 @@ for i, (train, test) in enumerate(SKFold.split(X_scaled,Y)):
      print("Fold :", i, "Test loss : ", scores[0], "Test mse :", scores[1], "Test accuracy :", scores[2])
 
 
-#max_len_loss = max(len(h) for h in loss_history)
 loss_history = np.array([np.pad(h, (0, 100 - len(h)), constant_values=np.nan) for h in loss_history])
 val_loss_history = np.array([np.pad(h, (0, 100 - len(h)), constant_values=np.nan) for h in val_loss_history])
 accuracy_history = np.array([np.pad(h, (0, 100 - len(h)), constant_values=np.nan) for h in accuracy_history])
